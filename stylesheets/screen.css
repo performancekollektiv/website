@@ -1,4 +1,4 @@
-* {transition:all .4s;}
+* {transition:all 1s;}
 h1:hover {transition:transform 12s; transform:rotate(700deg);}
 h1:hover::after { 
     content: " ·       …………………  scroll down"; color:red;
