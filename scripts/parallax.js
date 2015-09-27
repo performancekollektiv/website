@@ -10,6 +10,7 @@ var scrolly=0;
 var scrolling = false;
 var winh = window.innerHeight, winh2 = window.innerHeight/2;
 var pc;
+var addeds = 0;
 var addingInterval;
 window.onload = function(){
     scrolly=window.pageYOffset+winh2
@@ -35,7 +36,6 @@ function initParallax(){
 }
 
 function adding (){
-    if (imgs.length>100) return;
     if (Math.random()>.95){
         var obj = imgs[parseInt(Math.random()*imgs.length)]
         console.log(obj+"+++++++");
@@ -43,7 +43,8 @@ function adding (){
        document.getElementById("bg").appendChild(newobj);
        newobj.style.transform="rotate("+parseInt(ran(360))+"deg)";
        clearInterval(addingInterval);
-       initParallax();
+       if (Math.random()>7) document.getElementById("bg").style.transform="rotate("+parseInt(ran(360))+"deg)";
+       if (++addeds<10) initParallax();
     }
 }
 
